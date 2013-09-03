@@ -3,10 +3,16 @@
   "version": "0.0.1",
   "dependencies": {
     "express": "3.1.x",
-    "socket.io": "0.9.x"
+    "socket.io": "0.9.x",
+    "inbox": "~1.1.36",
+    "mailparser": "~0.3.6"
   },
   "engines": {
     "node": "0.10.x",
     "npm": "1.2.x"
+  },
+  "subdomain": "latis-message",
+  "scripts": {
+    "start": "node app.js"
   }
 }

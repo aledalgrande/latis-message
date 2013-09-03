@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <script src="./node_modules/socket.io/node_modules/socket.io-client/dist/socket.io.js"></script> 
+        <form>
+            <input type="text" placeholder="message..."></input>
+            <input type="submit" value="send"/>
+        </form>
+        <script>
+            var socket = io.connect('http://latis-message.jit.su'),
+                form = document.querySelector('form');
+
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                var message = form.querySelector('input[type=text]').value;
+                socket.emit('message', { message: message });
+            });
+
+            socket.on('message', function(data) {
+                console.log(data.message);
+            });
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
